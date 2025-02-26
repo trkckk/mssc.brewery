@@ -1,4 +1,4 @@
-package services;
+package trkck.mssc.brewery.services;
 
 import trkck.mssc.brewery.web.model.Customer;
 
