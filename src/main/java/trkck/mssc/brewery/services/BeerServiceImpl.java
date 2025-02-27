@@ -1,9 +1,11 @@
 package trkck.mssc.brewery.services;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import trkck.mssc.brewery.web.model.BeerDto;
 
 import java.util.UUID;
+@Slf4j
 @Service
 public class BeerServiceImpl implements BeerService {
 
@@ -27,5 +29,10 @@ public class BeerServiceImpl implements BeerService {
     public void update(UUID beerId, BeerDto beerDto) {
         // to do impl would a real impl to update beer
 
+    }
+
+    @Override
+    public void deleteById() {
+        log.debug("deleting a beer...");
     }
 }
