@@ -1,4 +1,4 @@
-package trkck.mssc.brewery.controller;
+package trkck.mssc.brewery.web.controller;
 
 
 import org.springframework.http.HttpHeaders;
@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import trkck.mssc.brewery.services.CustomerService;
-import trkck.mssc.brewery.web.model.BeerDto;
 import trkck.mssc.brewery.web.model.Customer;
 
 import java.util.UUID;
