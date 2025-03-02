@@ -1,12 +1,12 @@
-package trkck.mssc.brewery.services;
+package trkck.mssc.brewery.services.v2;
 
 import trkck.mssc.brewery.web.model.BeerDto;
 import trkck.mssc.brewery.web.model.v2.BeerDtoV2;
 
 import java.util.UUID;
 
-public interface BeerService {
-    BeerDto getBeerById(UUID uuid);
+public interface BeerServiceV2 {
+    BeerDtoV2 getBeerById(UUID beerId);
 
     BeerDto saveNewBeer(BeerDtoV2 beerDto);
 
