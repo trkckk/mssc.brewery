@@ -2,11 +2,13 @@ package trkck.mssc.brewery.web.controller.v2;
 
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import trkck.mssc.brewery.services.BeerService;
+
 import trkck.mssc.brewery.services.v2.BeerServiceV2;
 import trkck.mssc.brewery.web.model.BeerDto;
 import trkck.mssc.brewery.web.model.v2.BeerDtoV2;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Validated
 @RestController
 @RequestMapping("/api/v2/beer")
 public class BeerControllerV2 {
@@ -26,12 +29,12 @@ public class BeerControllerV2 {
     }
 
     @GetMapping({"/{beerId}"})
-    public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerId) {
+    public ResponseEntity<BeerDto> getBeer(@NotNull @PathVariable("beerId") UUID beerId) {
 
         return new ResponseEntity(beerServiceV2.getBeerById(beerId), HttpStatus.OK);
     }
     @PostMapping
-    public ResponseEntity handlePost(@Valid @RequestBody BeerDtoV2 beerDtoV2){
+    public ResponseEntity handlePost(@NotNull @Valid @RequestBody BeerDtoV2 beerDtoV2){
         BeerDto saveDto = beerServiceV2.saveNewBeer(beerDtoV2);
 
         HttpHeaders headers = new HttpHeaders();
