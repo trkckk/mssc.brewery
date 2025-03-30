@@ -56,13 +56,5 @@ public class BeerControllerV2 {
         beerServiceV2.deleteById();
     }
 
-    @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<List> validationErrorHandler(ConstraintViolationException ex){
-        List<String> errors = new ArrayList<>(ex.getConstraintViolations().size());
-        ex.getConstraintViolations().forEach(violation -> {
-            errors.add(violation.getMessage() + " : " + violation.getPropertyPath() + " : " + violation.getInvalidValue());
-        });
 
-        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
-    }
 }
