@@ -1,15 +1,15 @@
 package trkck.mssc.brewery.services;
 
-import trkck.mssc.brewery.web.model.Customer;
+import trkck.mssc.brewery.web.model.CustomerDto;
 
 import java.util.UUID;
 
 public interface CustomerService {
-    Customer getCustomerById(UUID uuid);
+    CustomerDto getCustomerById(UUID uuid);
 
-    Customer saveNewCustomer(Customer customer);
+    CustomerDto saveNewCustomer(CustomerDto customerDto);
 
-    void update(UUID customerId, Customer cutomer);
+    void update(UUID customerId, CustomerDto cutomer);
 
     void deleteById();
 }

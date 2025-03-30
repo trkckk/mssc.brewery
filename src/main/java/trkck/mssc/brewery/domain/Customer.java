@@ -1,14 +1,14 @@
-package trkck.mssc.brewery.web.model;
+package trkck.mssc.brewery.domain;
 
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.mapstruct.Mapper;
 
 import java.util.UUID;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +18,5 @@ public class Customer {
 
     private UUID id;
 
-    @NotBlank
-    @Size(min = 3, max = 100)
     private String customerName;
 }
